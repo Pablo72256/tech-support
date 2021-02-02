@@ -51,7 +51,7 @@ public class SupportSystem
         }
         printGoodbye();
     }
-
+    
     /**
      * Print a welcome message to the screen.
      */
