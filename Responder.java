@@ -1,4 +1,4 @@
-import java.util.ArrayList;	
+import java.util.ArrayList; 
 import java.util.Random;
 import java.util.HashMap;
 
@@ -23,14 +23,14 @@ public class Responder
         aleatorio = new Random();
         respuestas = new ArrayList<String>();
         respuestas.add("No te he entendido bien");
-	respuestas.add("¿Estas seguro?");
-	respuestas.add("Veremos que podemos hacer, ¿Necesitas algo mas?");
-	respuestas.add("De acuerdo, intentaremos solucionarlo, ¿Puedo hacer algo mas por ti?");
-	respuestas.add("Estamos trabajando en ello ¿Algo mas?");
-	respuestasMap.put("fallo","Dame el codigo del fallo");
-	respuestasMap.put("error","Que más te dice el error");
-	respuestasMap.put("pantalla","Que te pone en la pantalla");
-	respuestasMap.put("rojo","Que te pone en texto rojo");
+    respuestas.add("¿Estas seguro?");
+    respuestas.add("Veremos que podemos hacer, ¿Necesitas algo mas?");
+    respuestas.add("De acuerdo, intentaremos solucionarlo, ¿Puedo hacer algo mas por ti?");
+    respuestas.add("Estamos trabajando en ello ¿Algo mas?");
+    respuestasMap.put("fallo","Dame el codigo del fallo");
+    respuestasMap.put("error","Que más te dice el error");
+    respuestasMap.put("pantalla","Que te pone en la pantalla");
+    respuestasMap.put("rojo","Que te pone en texto rojo");
     }
 
     /**
@@ -46,9 +46,9 @@ public class Responder
             if (userInput.contains(key)){
                 retorno = respuestasMap.get(key);
             }
-            else{
-                retorno = respuestas.get(numeroAleatorio);
-            }
+        }
+        if (retorno == ""){
+            retorno = respuestas.get(numeroAleatorio);
         }
         return retorno;
     }
