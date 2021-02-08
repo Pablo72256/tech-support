@@ -41,10 +41,13 @@ public class Responder
     {
         int numeroAleatorio = 0;
         numeroAleatorio = aleatorio.nextInt(respuestas.size());
-        String retorno = respuestas.get(numeroAleatorio);
+        String retorno = "";
         for (String key : respuestasMap.keySet()){
             if (userInput.contains(key)){
                 retorno = respuestasMap.get(key);
+            }
+            else{
+                retorno = respuestas.get(numeroAleatorio);
             }
         }
         return retorno;
