@@ -40,14 +40,14 @@ public class Responder
     public String generateResponse(String userInput)
     {
         int numeroAleatorio = 0;
-        numeroAleatorio = aleatorio.nextInt(respuestas.size());
         String retorno = "";
         for (String key : respuestasMap.keySet()){
             if (userInput.contains(key)){
                 retorno = respuestasMap.get(key);
             }
         }
-        if (retorno == ""){
+        if (retorno.equals("")){
+            numeroAleatorio = aleatorio.nextInt(respuestas.size());
             retorno = respuestas.get(numeroAleatorio);
         }
         return retorno;
