@@ -1,6 +1,7 @@
 import java.util.ArrayList; 
 import java.util.Random;
 import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * The responder class represents a response generator object.
@@ -23,21 +24,21 @@ public class Responder
         aleatorio = new Random();
         respuestas = new ArrayList<String>();
         respuestas.add("No te he entendido bien");
-    respuestas.add("¿Estas seguro?");
-    respuestas.add("Veremos que podemos hacer, ¿Necesitas algo mas?");
-    respuestas.add("De acuerdo, intentaremos solucionarlo, ¿Puedo hacer algo mas por ti?");
-    respuestas.add("Estamos trabajando en ello ¿Algo mas?");
-    respuestasMap.put("fallo","Dame el codigo del fallo");
-    respuestasMap.put("error","Que más te dice el error");
-    respuestasMap.put("pantalla","Que te pone en la pantalla");
-    respuestasMap.put("rojo","Que te pone en texto rojo");
+        respuestas.add("¿Estas seguro?");
+        respuestas.add("Veremos que podemos hacer, ¿Necesitas algo mas?");
+        respuestas.add("De acuerdo, intentaremos solucionarlo, ¿Puedo hacer algo mas por ti?");
+        respuestas.add("Estamos trabajando en ello ¿Algo mas?");
+        respuestasMap.put("fallo","Dame el codigo del fallo");
+        respuestasMap.put("error","Que más te dice el error");
+        respuestasMap.put("pantalla","Que te pone en la pantalla");
+        respuestasMap.put("rojo","Que te pone en texto rojo");
     }
-
+    
     /**
      * Generate a response.
      * @return   A string that should be displayed as the response
      */
-    public String generateResponse(String userInput)
+    public String generateResponse(HashSet userInput)
     {
         int numeroAleatorio = 0;
         String retorno = "";

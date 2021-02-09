@@ -21,16 +21,23 @@ public class InputReader
     }
 
     /**
-     * Read a line of text from standard input (the text terminal),
-     * and return it as a String.
-     *
-     * @return  A String typed by the user.
+     * Lee una linea de texto de la entrada estandar (el terminal
+     * de texto) y la devuelve en forma de un conjunto de palabras
+     * 
+     * @return Un conjunto de objetos String, donde cada String es una
+     * de las palabras tecleadas por el usuario.
      */
-    public String getInput()
-    {
-        System.out.print("> ");         // print prompt
-        String inputLine = reader.nextLine();
-
-        return inputLine;
+    public HashSet<String> getInput() {
+        System.out.println(">");   //Imprime el indicativo
+        String inputLine = reader.nextLine().trim().toLowerCase();
+        
+        String[] wordArray = inputLine.split(" "); //Dividir en los espacios
+        
+        //Agregar palabras del array al HashSet
+        HashSet<String> words = new HashSet<String>();
+        for(String word : wordArray) {
+            words.add(word);
+        }
+        return words;
     }
 }
