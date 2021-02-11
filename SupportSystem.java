@@ -45,11 +45,9 @@ public class SupportSystem
                 if(key.equals("bye")) {
                     finished = true;
                 }
-                else {
-                    String response = responder.generateResponse(input);
-                    System.out.println(response);
-                }
             }
+            String response = responder.generateResponse(input);
+            System.out.println(response);
         }
         printGoodbye();
     }
