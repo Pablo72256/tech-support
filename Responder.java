@@ -16,7 +16,6 @@ public class Responder
     private ArrayList<String> respuestas;
     HashMap<HashSet<String>, String> respuestasMap = new HashMap<>();
     private String retonoPasado;
-    private int retornoNum;
     
     /**
      * Construct a Responder - nothing to do
@@ -28,7 +27,6 @@ public class Responder
         HashSet<String> respuestasSet3 = new HashSet<>();
         HashSet<String> respuestasSet4 = new HashSet<>();
         retonoPasado = "";
-        retornoNum = 0;
         aleatorio = new Random();
         respuestas = new ArrayList<String>();
         respuestas.add("No te he entendido bien");
@@ -73,14 +71,9 @@ public class Responder
         }
 
         if (retonoPasado == retorno){
-            retornoNum ++;
-        }
-        
-        if (retornoNum > 0){
             retorno = "";
-            retornoNum = 0;
         }
-        
+
         if (retorno.equals("")){
             numeroAleatorio = aleatorio.nextInt(respuestas.size());
             retorno = respuestas.get(numeroAleatorio);
