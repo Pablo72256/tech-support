@@ -34,10 +34,13 @@ public class Responder
         respuestas.add("Estamos trabajando en ello ¿Algo mas?");
         respuestasSet2.add("error");
         respuestasSet2.add("rojo");
-        respuestasSet3.add("pantalla");
+        respuestasSet2.add("1111");
+        respuestasSet3.add("error");
         respuestasSet3.add("azul");
+        respuestasSet3.add("2222");
         respuestasSet4.add("fallo");
         respuestasSet4.add("sistema");
+        respuestasSet4.add("3333");
         respuestasMap.put(respuestasSet2,"Dame el codigo del fallo");
         respuestasMap.put(respuestasSet3,"Que más te dice el error");
         respuestasMap.put(respuestasSet4,"Que te pone en la pantalla");
@@ -51,9 +54,20 @@ public class Responder
     {
         int numeroAleatorio = 0;
         String retorno = "";
-        if (respuestasMap.get(userInput) != null){
-            retorno = respuestasMap.get(userInput);
+        int total = 0;
+        for (HashSet<String> key : respuestasMap.keySet()){
+            int totalParcial = 0;
+            for (String key2 : key){
+                if (userInput.contains(key2)){
+                    totalParcial ++ ;
+                }
+            }
+            if (totalParcial > total){
+                total = totalParcial;
+                retorno = respuestasMap.get(key);
+            }
         }
+        
         if (retorno.equals("")){
             numeroAleatorio = aleatorio.nextInt(respuestas.size());
             retorno = respuestas.get(numeroAleatorio);
